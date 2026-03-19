@@ -1,0 +1,961 @@
+/* === Estilos del servicio === */
+
+/* --- Encabezado de página --- */
+.svc-page-header {
+  padding: 10rem 0 3.5rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(250, 247, 242, 0.1);
+}
+
+.svc-page-header .breadcrumb {
+  background: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.svc-page-header .breadcrumb-item a {
+  color: var(--teal-300, #5eead4);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.svc-page-header .breadcrumb-item a:hover {
+  color: var(--parchment);
+}
+
+.svc-page-header .breadcrumb-item.active {
+  color: rgba(250, 247, 242, 0.5);
+  font-size: 0.875rem;
+}
+
+.svc-page-header .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(250, 247, 242, 0.3);
+  content: '/';
+}
+
+.svc-page-header h1 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  color: var(--parchment);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  max-width: 640px;
+}
+
+.svc-page-header p {
+  color: rgba(250, 247, 242, 0.65);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0;
+}
+
+.svc-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 1rem;
+  background: rgba(15, 118, 110, 0.2);
+  border: 1px solid rgba(15, 118, 110, 0.35);
+  border-radius: 100px;
+  color: var(--teal-300, #5eead4);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+/* --- Detalle del servicio --- */
+.svc-detail {
+  padding: 4.5rem 0;
+  background: var(--parchment);
+  color: var(--ink);
+}
+
+.svc-detail h2,
+.svc-detail h3,
+.svc-detail h4 {
+  color: var(--ink);
+}
+
+.svc-detail p {
+  color: var(--ink);
+}
+
+.svc-description h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+
+.svc-description p {
+  color: var(--ink);
+  opacity: 0.72;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.svc-description p strong {
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* --- Beneficios --- */
+.svc-benefits-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.svc-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.svc-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.125rem 0;
+  border-bottom: 1px solid rgba(12, 18, 32, 0.06);
+}
+
+.svc-benefits li:last-child {
+  border-bottom: none;
+}
+
+.svc-benefit-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  background: var(--teal-50, #f0fdfa);
+  color: var(--color-primary);
+  border: 1px solid rgba(15, 118, 110, 0.1);
+}
+
+.svc-benefit-content h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  margin-bottom: 0.2rem;
+}
+
+.svc-benefit-content p {
+  font-size: 0.875rem;
+  color: var(--ink);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- Pasos del proceso --- */
+.svc-process-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.svc-process-subtitle {
+  color: var(--ink);
+  opacity: 0.55;
+  font-size: 0.9375rem;
+  margin-bottom: 2rem;
+}
+
+.svc-steps {
+  position: relative;
+  padding-left: 2.75rem;
+}
+
+.svc-steps::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background: rgba(12, 18, 32, 0.1);
+}
+
+.svc-step {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.svc-step:last-child {
+  padding-bottom: 0;
+}
+
+.svc-step-num {
+  position: absolute;
+  left: -2.75rem;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--parchment);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.svc-step h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.svc-step p {
+  font-size: 0.875rem;
+  color: var(--ink);
+  opacity: 0.6;
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* --- Tarjeta de precios --- */
+.svc-pricing-card {
+  background: var(--surface);
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  border-radius: 16px;
+  padding: 2rem;
+  position: sticky;
+  top: 100px;
+  transition: box-shadow 0.3s ease;
+}
+
+.svc-pricing-card:hover {
+  box-shadow: 0 8px 32px rgba(12, 18, 32, 0.08);
+}
+
+.svc-pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 16px 16px 0 0;
+}
+
+.svc-pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--teal-50, #f0fdfa);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(15, 118, 110, 0.12);
+}
+
+.svc-pricing-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  opacity: 0.5;
+  margin-bottom: 0.35rem;
+}
+
+.svc-pricing-amount {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.svc-pricing-amount span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  opacity: 0.45;
+}
+
+.svc-pricing-note {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--ink);
+  opacity: 0.4;
+  margin-top: 0.5rem;
+}
+
+.svc-pricing-divider {
+  border: none;
+  border-top: 1px solid rgba(12, 18, 32, 0.06);
+  margin: 1.5rem 0;
+}
+
+.svc-pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.svc-pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--ink);
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(12, 18, 32, 0.04);
+}
+
+.svc-pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.svc-pricing-features li i {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.svc-pricing-secure {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--ink);
+  opacity: 0.4;
+}
+
+/* --- Sección de planes --- */
+.svc-pricing-section {
+  padding: 4.5rem 0;
+  background: var(--ink);
+  color: var(--parchment);
+}
+
+.svc-pricing-section .svc-section-kicker {
+  color: var(--teal-300);
+}
+
+.svc-pricing-section .svc-section-title {
+  color: var(--parchment);
+}
+
+.svc-pricing-section .svc-section-subtitle {
+  color: rgba(250, 247, 242, 0.6);
+}
+
+.svc-section-kicker {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.svc-section-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.svc-section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  opacity: 0.55;
+  max-width: 520px;
+}
+
+.svc-tier-card {
+  background: rgba(250, 247, 242, 0.06);
+  border: 1px solid rgba(250, 247, 242, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  position: relative;
+}
+
+.svc-tier-card:hover {
+  background: rgba(250, 247, 242, 0.1);
+  transform: translateY(-2px);
+}
+
+.svc-tier-card .svc-tier-name,
+.svc-tier-card .svc-tier-price {
+  color: var(--parchment);
+}
+
+.svc-tier-card .svc-tier-features li {
+  color: rgba(250, 247, 242, 0.75);
+}
+
+.svc-tier-card .svc-tier-features li i {
+  color: var(--teal-300);
+}
+
+.svc-tier-card .svc-tier-divider {
+  border-color: rgba(250, 247, 242, 0.1);
+}
+
+.svc-tier-card.svc-tier-featured {
+  background: var(--parchment);
+  border-color: var(--parchment);
+}
+
+.svc-tier-card.svc-tier-featured .svc-tier-name,
+.svc-tier-card.svc-tier-featured .svc-tier-price {
+  color: var(--ink);
+}
+
+.svc-tier-card.svc-tier-featured .svc-tier-desc {
+  color: var(--ink);
+  opacity: 0.6;
+}
+
+.svc-tier-card.svc-tier-featured .svc-tier-features li {
+  color: var(--ink);
+  opacity: 0.7;
+}
+
+.svc-tier-card.svc-tier-featured .svc-tier-features li i {
+  color: var(--color-primary);
+}
+
+.svc-tier-card.svc-tier-featured .svc-tier-divider {
+  border-color: rgba(12, 18, 32, 0.08);
+}
+
+.svc-tier-popular {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.3rem 1rem;
+  background: var(--color-secondary);
+  color: white;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.svc-tier-name {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--parchment);
+  margin-bottom: 0.25rem;
+}
+
+.svc-tier-desc {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: rgba(250, 247, 242, 0.5);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.svc-tier-price {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 2.25rem;
+  color: var(--parchment);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.svc-tier-price span {
+  font-size: 0.875rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.svc-tier-divider {
+  border: none;
+  border-top: 1px solid rgba(12, 18, 32, 0.06);
+  margin: 1.25rem 0;
+}
+
+.svc-tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+
+.svc-tier-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  opacity: 0.65;
+}
+
+.svc-tier-features li i {
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* --- Sección de incluidos --- */
+.svc-includes {
+  padding: 4.5rem 0;
+  background: var(--parchment);
+}
+
+.svc-include-card {
+  background: var(--surface);
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  border-radius: 14px;
+  padding: 1.75rem;
+  height: 100%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.svc-include-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(12, 18, 32, 0.06);
+}
+
+.svc-include-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.svc-include-icon.icon-teal {
+  background: var(--teal-50, #f0fdfa);
+  color: var(--color-primary);
+  border: 1px solid rgba(15, 118, 110, 0.1);
+}
+
+.svc-include-icon.icon-crimson {
+  background: var(--crimson-50, #fff1f2);
+  color: var(--color-secondary);
+  border: 1px solid rgba(159, 18, 57, 0.08);
+}
+
+.svc-include-icon.icon-brass {
+  background: var(--brass-50, #fffbeb);
+  color: var(--color-accent);
+  border: 1px solid rgba(180, 83, 9, 0.08);
+}
+
+.svc-include-card h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+
+.svc-include-card p {
+  font-size: 0.8125rem;
+  color: var(--ink);
+  opacity: 0.55;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.svc-checklist-box {
+  background: var(--surface);
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  border-radius: 14px;
+  padding: 1.75rem 2rem;
+}
+
+.svc-checklist-box h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.svc-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.svc-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--ink);
+  opacity: 0.7;
+  break-inside: avoid;
+}
+
+.svc-checklist li i {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+/* --- Preguntas frecuentes --- */
+.svc-faq {
+  padding: 4.5rem 0;
+  background: var(--parchment);
+}
+
+.svc-faq .accordion-item {
+  border: 1px solid rgba(12, 18, 32, 0.08);
+  border-radius: 12px !important;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.svc-faq .accordion-button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--ink);
+  padding: 1.125rem 1.5rem;
+  background: var(--surface);
+  box-shadow: none;
+}
+
+.svc-faq .accordion-button:not(.collapsed) {
+  background: var(--teal-50, #f0fdfa);
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+.svc-faq .accordion-button::after {
+  background-size: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.svc-faq .accordion-button:focus {
+  box-shadow: none;
+}
+
+.svc-faq .accordion-body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  opacity: 0.65;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  padding: 0 1.5rem 1.25rem;
+}
+
+/* --- Servicios relacionados --- */
+.svc-related {
+  padding: 4.5rem 0;
+  background: var(--parchment);
+}
+
+.svc-related-card {
+  background: var(--surface);
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  border-radius: 14px;
+  padding: 1.75rem;
+  height: 100%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-related-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.svc-related-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(12, 18, 32, 0.06);
+}
+
+.svc-related-card:hover::before {
+  opacity: 1;
+}
+
+.svc-related-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.125rem;
+  background: var(--teal-50, #f0fdfa);
+  color: var(--color-primary);
+  border: 1px solid rgba(15, 118, 110, 0.1);
+}
+
+.svc-related-card h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.svc-related-card p {
+  font-size: 0.8125rem;
+  color: var(--ink);
+  opacity: 0.55;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.svc-related-link {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.25s ease;
+}
+
+.svc-related-card:hover .svc-related-link {
+  gap: 0.55rem;
+}
+
+/* --- Sección CTA --- */
+.svc-cta {
+  padding: 4.5rem 0;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.svc-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.svc-cta h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--parchment);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.svc-cta p {
+  color: rgba(250, 247, 242, 0.6);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+.svc-cta-card {
+  background: rgba(250, 247, 242, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(250, 247, 242, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.svc-cta-card .phone-label {
+  color: rgba(250, 247, 242, 0.55);
+  font-size: 0.8125rem;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.svc-cta-card .phone-number {
+  color: var(--parchment);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.svc-ledger-line {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--color-primary);
+  opacity: 0.35;
+  margin-bottom: 1.25rem;
+}
+
+.svc-ledger-line-center {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--color-primary);
+  opacity: 0.35;
+  margin: 0 auto 1.25rem;
+}
+
+.svc-section-header-wrapper {
+  max-width: 560px;
+  margin-bottom: 3rem;
+}
+
+.svc-cta-ledger {
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--teal-300);
+  opacity: 0.5;
+  margin-bottom: 1.25rem;
+}
+
+.svc-cta-whatsapp {
+  border-color: rgba(250, 247, 242, 0.2);
+  color: var(--parchment);
+}
+
+.svc-cta-whatsapp:hover {
+  border-color: rgba(250, 247, 242, 0.4);
+  color: var(--parchment);
+}
+
+.svc-cta-phone-icon {
+  font-size: 2.5rem;
+  color: rgba(250, 247, 242, 0.8);
+}
+
+.svc-checklist-heading-icon {
+  color: var(--color-primary);
+}
+
+.footer .brand-icon {
+  font-size: 1.25rem;
+  width: 36px;
+  height: 36px;
+}
+
+.footer .brand-text {
+  color: var(--parchment);
+  font-size: 1.1rem;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 991.98px) {
+  .svc-pricing-card {
+    position: static;
+    margin-top: 2.5rem;
+  }
+
+  .svc-checklist {
+    columns: 1;
+  }
+
+  .svc-tier-card.svc-tier-featured {
+    order: -1;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .svc-page-header {
+    padding: 8rem 0 2.5rem;
+  }
+
+  .svc-detail,
+  .svc-pricing-section,
+  .svc-includes,
+  .svc-faq,
+  .svc-related,
+  .svc-cta {
+    padding: 3rem 0;
+  }
+
+  .svc-checklist {
+    columns: 1;
+  }
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carrito de compras — Solano Y Asociados. Revise los servicios seleccionados y proceda al pago.">
+  <meta name="theme-color" content="#faf7f2">
+  <title>Carrito — Solano Y Asociados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;&#xFE0F;</text></svg>">
+</head>
+
+<body class="cart-page">
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon"></div>
+    </div>
+  </div>
+
+  <!-- ====== NAVEGACIÓN ====== -->
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-transparent fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo de Solano Y Asociados" class="navbar-logo" style="width: 40px; height: 40px; object-fit: contain;">
+        <span class="brand-text">Solano <span class="brand-ampersand">&</span> Asociados</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="soporte.html">Soporte</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link nav-cart" href="carrito.html" aria-label="Carrito de servicios">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent-custom btn-sm" href="mi-cuenta.html">
+              <i class="bi bi-person-circle me-1"></i> Mi Cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== ENCABEZADO ====== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Carrito de <em>Servicios</em></h1>
+      <p>Revise los servicios seleccionados antes de continuar con su pedido.</p>
+      <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="catalogo.html">Servicios</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Carrito</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ====== CARRITO ====== -->
+  <section class="cart-section">
+    <div class="container">
+
+      <div id="cartContent" style="display: none;">
+        <div class="row g-4">
+
+          <div class="col-lg-8">
+            <div class="cart-table">
+              <div class="cart-table-header">
+                <span>Servicio</span>
+                <span>Precio</span>
+                <span>Cantidad</span>
+                <span>Subtotal</span>
+                <span></span>
+              </div>
+              <div id="cartItemsContainer"></div>
+            </div>
+
+            <div class="cart-actions">
+              <a href="catalogo.html" class="btn btn-outline-custom">
+                <i class="bi bi-arrow-left me-2"></i>Seguir comprando
+              </a>
+              <button class="btn-clear-cart" onclick="clearCart()">
+                <i class="bi bi-trash3 me-1"></i> Vaciar carrito
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="order-summary">
+              <h4 class="order-summary-title">
+                <i class="bi bi-receipt"></i> Resumen del pedido
+              </h4>
+
+              <div class="summary-row">
+                <span class="label">Subtotal (<span id="summaryCount">0</span> servicios)</span>
+                <span class="value" id="summarySubtotal">L 0.00</span>
+              </div>
+
+              <div class="summary-row discount">
+                <span class="label">Descuento</span>
+                <span class="value" id="summaryDiscount">- L 0.00</span>
+              </div>
+
+              <div class="discount-input">
+                <input type="text" class="form-control form-control-custom" placeholder="Código de descuento…" id="discountCode" autocomplete="off">
+                <button class="btn btn-outline-custom btn-sm px-3" onclick="applyDiscount()">Aplicar</button>
+              </div>
+
+              <div class="summary-row">
+                <span class="label">ISV (15%)</span>
+                <span class="value" id="summaryTax">L 0.00</span>
+              </div>
+
+              <div class="summary-row total">
+                <span class="label">Total</span>
+                <span class="value" id="summaryTotal">L 0.00</span>
+              </div>
+
+              <a href="checkout.html" class="btn btn-primary-custom w-100 py-3 mt-3">
+                Proceder al pago <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+
+              <div class="security-badge">
+              <i class="bi bi-shield-lock-fill" aria-hidden="true"></i> Pago 100% seguro y cifrado
+              </div>
+
+              <div class="trust-indicators">
+                <div class="trust-item">
+                  <i class="bi bi-patch-check-fill" aria-hidden="true"></i> Garantizado
+                </div>
+                <div class="trust-item">
+                  <i class="bi bi-headset" aria-hidden="true"></i> Soporte 24/7
+                </div>
+                <div class="trust-item">
+                  <i class="bi bi-arrow-repeat" aria-hidden="true"></i> Sin compromisos
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="emptyCart" style="display: none;">
+        <div class="empty-cart">
+          <div class="empty-cart-icon">
+            <i class="bi bi-bag-x"></i>
+          </div>
+          <h3>Su carrito esta vacio</h3>
+          <p>No ha agregado servicios a su carrito. Explore nuestro catalogo y encuentre el servicio ideal para su empresa.</p>
+          <a href="catalogo.html" class="btn btn-primary-custom px-4 py-3">
+            <i class="bi bi-grid me-2"></i>Explorar servicios
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-icon">S</span>
+            <span class="brand-text">Solano & Asociados</span>
+          </div>
+          <p class="footer-desc mt-3">
+            Servicios profesionales de contaduria publica, finanzas y tributacion en Honduras.
+          </p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Navegacion</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="servicio.html">Declaraciones</a></li>
+            <li><a href="servicio.html">ISR Anual</a></li>
+            <li><a href="servicio.html">Constitucion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Boletin Informativo</h4>
+          <p class="footer-desc">Reciba actualizaciones fiscales y consejos directamente en su correo.</p>
+          <form class="footer-newsletter mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-custom" placeholder="Su correo electronico" required>
+              <button class="btn btn-accent-custom" type="submit">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copy">&copy; <span id="currentYear">2026</span> Solano Y Asociados. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-legal">
+              <a href="terminos.html">Terminos de Uso</a>
+              <a href="privacidad.html">Aviso de Privacidad</a>              <a href="devoluciones.html">Devoluciones</a>
+              <a href="cookies.html">Cookies</a>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* === Estilos responsivos === */
+
+/* --- Pantalla grande --- */
+@media (max-width: 1399.98px) {
+  :root {
+    --font-size-5xl: 2.75rem;
+  }
+}
+
+/* --- Tableta --- */
+@media (max-width: 991.98px) {
+  :root {
+    --font-size-4xl: 2rem;
+    --font-size-5xl: 2.25rem;
+  }
+
+  .navbar-custom .navbar-collapse {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-top: var(--space-3);
+    border: 1px solid var(--border-default);
+  }
+
+  .navbar-transparent .navbar-collapse {
+    background: rgba(12, 18, 32, 0.95);
+    backdrop-filter: blur(16px);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .section-padding {
+    padding: var(--space-16) 0;
+  }
+
+  .page-header {
+    padding: 6rem 0 2.5rem;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-links li a {
+    justify-content: center;
+  }
+}
+
+/* --- Móvil --- */
+@media (max-width: 767.98px) {
+  :root {
+    --font-size-3xl: 1.5rem;
+    --font-size-4xl: 1.75rem;
+    --font-size-5xl: 2rem;
+  }
+
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+
+  .section-padding {
+    padding: var(--space-12) 0;
+  }
+
+  .page-header {
+    padding: 5.5rem 0 2rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .card-custom {
+    padding: var(--space-6);
+  }
+
+  .scroll-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* --- Extra pequeño --- */
+@media (max-width: 575.98px) {
+  :root {
+    --font-size-3xl: 1.35rem;
+    --font-size-4xl: 1.5rem;
+    --font-size-5xl: 1.75rem;
+  }
+
+  body {
+    font-size: 0.9375rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-8);
+  }
+
+  .card-custom {
+    padding: var(--space-4);
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    padding: var(--space-12) 0 var(--space-6);
+  }
+}
+
+/* --- Impresión --- */
+@media print {
+  .navbar-custom, .scroll-top, .footer-social, .footer-newsletter, .preloader {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+}

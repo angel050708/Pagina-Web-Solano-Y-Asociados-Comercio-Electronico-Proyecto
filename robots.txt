@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /img/
+Sitemap: https://www.solanoyasociados.com/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1

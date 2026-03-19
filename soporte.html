@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Centro de Soporte — Solano Y Asociados. Encuentre respuestas, envíe tickets y contacte a nuestro equipo de soporte técnico y contable.">
+  <meta name="keywords" content="soporte, ayuda, tickets, FAQ, contaduría, SAR, Honduras, Solano Y Asociados">
+  <meta name="author" content="Solano Y Asociados">
+
+  <meta property="og:title" content="Centro de Soporte — Solano Y Asociados">
+  <meta property="og:description" content="Encuentre respuestas a sus preguntas, envíe tickets de soporte y contacte a nuestro equipo de asistencia.">
+  <meta property="og:type" content="website">
+
+  <title>Centro de Soporte — Solano Y Asociados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/soporte.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>S</text></svg>">
+</head>
+<body>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon"></div>
+    </div>
+  </div>
+
+  <!-- ====== NAVEGACIÓN ====== -->
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-transparent fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo de Solano Y Asociados" class="navbar-logo" style="width: 40px; height: 40px; object-fit: contain;">
+        <span class="brand-text">Solano <span class="brand-ampersand">&</span> Asociados</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link active" href="soporte.html">Soporte</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link nav-cart" href="carrito.html" aria-label="Carrito de servicios">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent-custom btn-sm" href="mi-cuenta.html">
+              <i class="bi bi-person-circle me-1"></i> Mi Cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ====== ENCABEZADO ====== -->
+  <section class="soporte-header">
+    <div class="container position-relative" style="z-index: 2;">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Centro de Soporte</li>
+        </ol>
+      </nav>
+      <div class="ledger-line" style="margin-bottom: var(--space-6); max-width: 200px;"></div>
+      <h1>Centro de <em>Soporte</em></h1>
+      <p>Estamos aqui para ayudarle. Encuentre respuestas, contacte a nuestro equipo o envie un ticket de soporte.</p>
+    </div>
+  </section>
+
+
+  <!-- ====== BARRA DE BÚSQUEDA ====== -->
+  <section class="support-search">
+    <div class="container">
+      <div class="text-center mb-4 fade-in">
+        <h2>En que podemos <em>ayudarle?</em></h2>
+      </div>
+      <div class="support-search-box fade-in">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Buscar articulos, guias, preguntas frecuentes..." aria-label="Buscar en soporte">
+          <button class="btn" type="button"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+      <div class="support-search-tags fade-in">
+        <a href="#">Declaracion ISR</a>
+        <a href="#">Facturacion electronica</a>
+        <a href="#">Portal del cliente</a>
+        <a href="#">Tramites SAR</a>
+        <a href="#">Pagos pendientes</a>
+        <a href="#">Constitucion de empresa</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== BASE DE CONOCIMIENTO ====== -->
+  <section class="kb-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="ledger-line-center"></div>
+        <h2 class="section-title">Base de Conocimiento</h2>
+        <p class="section-subtitle">Articulos detallados organizados por categoria para resolver sus dudas rapidamente.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="kb-card">
+            <div class="kb-card-icon icon-teal"><i class="bi bi-file-earmark-text"></i></div>
+            <h5>Declaraciones</h5>
+            <ul>
+              <li><a href="#">Como presentar la declaracion mensual de ISV</a></li>
+              <li><a href="#">Guia paso a paso: Declaracion anual de ISR</a></li>
+              <li><a href="#">Plazos y fechas limite de declaraciones 2025</a></li>
+              <li><a href="#">Correccion de declaraciones ya presentadas</a></li>
+            </ul>
+            <span class="kb-card-count"><i class="bi bi-journal-text"></i> 12 articulos</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="kb-card">
+            <div class="kb-card-icon icon-crimson"><i class="bi bi-receipt"></i></div>
+            <h5>Facturacion</h5>
+            <ul>
+              <li><a href="#">Configurar facturacion electronica (DET Live)</a></li>
+              <li><a href="#">Emision de facturas de credito fiscal</a></li>
+              <li><a href="#">Anulacion y notas de credito</a></li>
+            </ul>
+            <span class="kb-card-count"><i class="bi bi-journal-text"></i> 9 articulos</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="kb-card">
+            <div class="kb-card-icon icon-teal-light"><i class="bi bi-person-badge"></i></div>
+            <h5>Portal del Cliente</h5>
+            <ul>
+              <li><a href="#">Como acceder a su portal por primera vez</a></li>
+              <li><a href="#">Restablecer contrasena del portal</a></li>
+              <li><a href="#">Descargar reportes y estados financieros</a></li>
+            </ul>
+            <span class="kb-card-count"><i class="bi bi-journal-text"></i> 7 articulos</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="kb-card">
+            <div class="kb-card-icon icon-ink"><i class="bi bi-building"></i></div>
+            <h5>Tramites SAR</h5>
+            <ul>
+              <li><a href="#">Obtencion de RTN para personas naturales</a></li>
+              <li><a href="#">Solicitud de autorizacion de facturacion</a></li>
+              <li><a href="#">Actualizacion de datos ante el SAR</a></li>
+              <li><a href="#">Constancia de solvencia fiscal</a></li>
+            </ul>
+            <span class="kb-card-count"><i class="bi bi-journal-text"></i> 15 articulos</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="kb-card">
+            <div class="kb-card-icon icon-brass"><i class="bi bi-briefcase"></i></div>
+            <h5>Constitucion de Empresas</h5>
+            <ul>
+              <li><a href="#">Requisitos para constituir una S. de R.L.</a></li>
+              <li><a href="#">Proceso de inscripcion en el Registro Mercantil</a></li>
+              <li><a href="#">Documentos necesarios para apertura de empresa</a></li>
+            </ul>
+            <span class="kb-card-count"><i class="bi bi-journal-text"></i> 8 articulos</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="kb-card">
+            <div class="kb-card-icon icon-crimson-light"><i class="bi bi-credit-card"></i></div>
+            <h5>Pagos y Cobros</h5>
+            <ul>
+              <li><a href="#">Metodos de pago aceptados</a></li>
+              <li><a href="#">Consultar estado de cuenta y saldos</a></li>
+              <li><a href="#">Politica de reembolsos y cancelaciones</a></li>
+            </ul>
+            <span class="kb-card-count"><i class="bi bi-journal-text"></i> 6 articulos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== CONTACTO DE SOPORTE ====== -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="ledger-line-center"></div>
+        <h2 class="section-title">Contactar Soporte</h2>
+        <p class="section-subtitle">Elija el canal que prefiera para comunicarse con nuestro equipo.</p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-3 fade-in">
+          <div class="contact-card">
+            <div class="contact-card-icon icon-email"><i class="bi bi-envelope"></i></div>
+            <h5>Ticket por Email</h5>
+            <p>Respuesta en menos de 24 horas habiles.</p>
+            <a href="#ticketForm" class="btn btn-outline-custom btn-sm w-100">Enviar ticket</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <div class="contact-card">
+            <div class="contact-card-icon icon-phone"><i class="bi bi-telephone"></i></div>
+            <h5>Llamada Telefonica</h5>
+            <p>Atencion directa en horario de oficina.</p>
+            <a href="tel:+50499162219" class="btn btn-outline-custom btn-sm w-100">+504 9916-2219</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <div class="contact-card">
+            <div class="contact-card-icon icon-whatsapp"><i class="bi bi-whatsapp"></i></div>
+            <h5>WhatsApp</h5>
+            <p>Escribanos al instante por WhatsApp.</p>
+            <a href="https://wa.me/50499162219" target="_blank" class="btn btn-outline-custom btn-sm w-100">Abrir chat</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 fade-in">
+          <div class="contact-card">
+            <div class="contact-card-icon icon-chat"><i class="bi bi-chat-dots"></i></div>
+            <h5>Chat en Vivo</h5>
+            <p>Disponible lunes a viernes, 8 AM - 5 PM.</p>
+            <button class="btn btn-outline-custom btn-sm w-100" onclick="document.getElementById('liveChat').scrollIntoView({behavior:'smooth'});">Iniciar chat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== CHAT EN VIVO ====== -->
+  <section class="chat-placeholder" id="liveChat">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <div class="ledger-line" style="margin-bottom: var(--space-4); max-width: 160px;"></div>
+          <h2 style="font-family: var(--font-heading); font-size: var(--font-size-3xl); font-weight: 400; font-style: italic; margin-bottom: var(--space-4); color: var(--ink);">
+            Chat en <em>vivo</em>
+          </h2>
+          <p style="color: var(--ink-secondary); font-size: var(--font-size-lg); font-weight: 300; line-height: 1.7; margin-bottom: var(--space-6);">
+            Conectese directamente con nuestro equipo de soporte. Resolvemos dudas contables, fiscales y de plataforma en tiempo real.
+          </p>
+          <div class="d-flex gap-4">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: var(--font-size-2xl); font-weight: 500; color: var(--color-primary);">&lt; 5 min</div>
+              <div style="font-size: var(--font-size-sm); color: var(--ink-tertiary);">Tiempo de respuesta</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: var(--font-size-2xl); font-weight: 500; color: var(--color-primary);">98%</div>
+              <div style="font-size: var(--font-size-sm); color: var(--ink-tertiary);">Satisfaccion</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-1">
+          <div class="chat-widget fade-in">
+            <div class="chat-widget-header">
+              <div class="chat-avatar"><i class="bi bi-headset"></i></div>
+              <div class="chat-info">
+                <h6>Soporte Solano & Asociados</h6>
+                <span>En linea - Respuesta inmediata</span>
+              </div>
+            </div>
+            <div class="chat-widget-body">
+              <div class="chat-msg agent">
+                Bienvenido al chat de soporte de Solano & Asociados. En que podemos ayudarle hoy?
+                <span class="chat-time">10:32 AM</span>
+              </div>
+              <div class="chat-msg user">
+                Buenos dias, necesito ayuda con mi declaracion mensual de ISV.
+                <span class="chat-time">10:33 AM</span>
+              </div>
+              <div class="chat-msg agent">
+                Con gusto le asisto. Podria indicarme su numero de RTN y el periodo de la declaracion?
+                <span class="chat-time">10:33 AM</span>
+              </div>
+            </div>
+            <div class="chat-widget-footer">
+              <input type="text" placeholder="Escriba su mensaje..." disabled>
+              <button type="button" disabled title="Proximamente disponible"><i class="bi bi-send"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== FORMULARIO DE TICKET ====== -->
+  <section class="ticket-section" id="ticketForm">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-header text-center">
+            <div class="ledger-line-center"></div>
+            <h2 class="section-title">Crear Ticket de Soporte</h2>
+            <p class="section-subtitle">Complete el formulario y nuestro equipo le respondera a la brevedad.</p>
+          </div>
+
+          <div class="ticket-form-wrapper fade-in">
+            <form onsubmit="event.preventDefault(); this.reset(); alert('Ticket enviado exitosamente. Le contactaremos pronto.');">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="ticketNombre">Nombre completo *</label>
+                  <input type="text" class="form-control" id="ticketNombre" placeholder="Ej: Maria Lopez" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="ticketEmail">Correo electronico *</label>
+                  <input type="email" class="form-control" id="ticketEmail" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="ticketAsunto">Asunto *</label>
+                  <input type="text" class="form-control" id="ticketAsunto" placeholder="Resuma brevemente su consulta" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="ticketCategoria">Categoria</label>
+                  <select class="form-select" id="ticketCategoria">
+                    <option value="" selected>Seleccione una categoria</option>
+                    <option value="declaraciones">Declaraciones</option>
+                    <option value="facturacion">Facturacion</option>
+                    <option value="portal">Portal del Cliente</option>
+                    <option value="sar">Tramites SAR</option>
+                    <option value="constitucion">Constitucion de Empresas</option>
+                    <option value="pagos">Pagos y Cobros</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="ticketPrioridad">Prioridad</label>
+                  <select class="form-select" id="ticketPrioridad">
+                    <option value="normal" selected>Normal</option>
+                    <option value="alta">Alta</option>
+                    <option value="urgente">Urgente</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="ticketDescripcion">Descripcion *</label>
+                  <textarea class="form-control" id="ticketDescripcion" placeholder="Describa su problema o consulta con el mayor detalle posible..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Archivo adjunto (opcional)</label>
+                  <label class="file-upload-zone d-block" for="ticketArchivo">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                    <span>Haga clic o arrastre un archivo aqui</span>
+                    <div class="file-types">PDF, JPG, PNG, XLSX - max. 10 MB</div>
+                    <input type="file" id="ticketArchivo" class="d-none" accept=".pdf,.jpg,.jpeg,.png,.xlsx,.xls,.doc,.docx">
+                  </label>
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-primary-custom w-100">
+                    <i class="bi bi-send me-2"></i> Enviar Ticket
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== HORARIOS Y TIEMPOS ====== -->
+  <section class="hours-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="ledger-line-center"></div>
+        <h2 class="section-title">Horarios y Tiempos de Respuesta</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="hours-card">
+            <h5><i class="bi bi-clock"></i> Horarios de Atencion</h5>
+            <div class="hours-row"><span class="day">Lunes - Viernes</span><span class="time">8:00 AM - 5:00 PM</span></div>
+            <div class="hours-row"><span class="day">Sabado</span><span class="time">Cerrado</span></div>
+            <div class="hours-row"><span class="day">Domingo</span><span class="time">Cerrado</span></div>
+            <div class="hours-row"><span class="day">Dias feriados</span><span class="time">Cerrado</span></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="hours-card">
+            <h5><i class="bi bi-lightning"></i> Tiempos de Respuesta</h5>
+            <div class="hours-row">
+              <span class="day">Email / Ticket</span>
+              <span class="response-badge medium"><i class="bi bi-clock-history"></i> &lt; 24h</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Telefono</span>
+              <span class="response-badge fast"><i class="bi bi-clock-history"></i> Inmediato</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">WhatsApp</span>
+              <span class="response-badge fast"><i class="bi bi-clock-history"></i> &lt; 2h</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Chat en vivo</span>
+              <span class="response-badge fast"><i class="bi bi-clock-history"></i> &lt; 5 min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-lg-4 fade-in">
+          <div class="hours-card">
+            <h5><i class="bi bi-flag"></i> Resolucion por Prioridad</h5>
+            <div class="hours-row">
+              <span class="day">Normal</span>
+              <span class="response-badge slow"><i class="bi bi-clock-history"></i> 2 - 3 dias</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Alta</span>
+              <span class="response-badge medium"><i class="bi bi-clock-history"></i> 1 dia habil</span>
+            </div>
+            <div class="hours-row">
+              <span class="day">Urgente</span>
+              <span class="response-badge fast"><i class="bi bi-clock-history"></i> &lt; 4 horas</span>
+            </div>
+            <p style="font-size: var(--font-size-xs); color: var(--ink-tertiary); margin-top: var(--space-4); margin-bottom: 0;">
+              * Los tiempos son estimados dentro del horario laboral.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== ESTADO DE TICKETS ====== -->
+  <section class="tickets-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="ledger-line-center"></div>
+        <h2 class="section-title">Estado de Tickets</h2>
+        <p class="section-subtitle">Consulte el estado de sus solicitudes. <a href="mi-cuenta.html" style="color: var(--color-primary); font-weight: 600;">Inicie sesion</a> para ver sus tickets reales.</p>
+      </div>
+
+      <div class="tickets-table-wrapper fade-in">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Ticket</th>
+              <th>Asunto</th>
+              <th>Categoria</th>
+              <th>Prioridad</th>
+              <th>Estado</th>
+              <th>Ultima actualizacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ticket-id">#TK-2026-0147</span></td>
+              <td>Error al cargar declaracion mensual ISV</td>
+              <td>Declaraciones</td>
+              <td><span class="priority-badge alta">Alta</span></td>
+              <td><span class="status-badge progress"><span class="status-dot"></span> En progreso</span></td>
+              <td style="font-family: var(--font-mono); font-size: var(--font-size-xs);">12 Mar 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticket-id">#TK-2026-0142</span></td>
+              <td>Solicitud de constancia de solvencia</td>
+              <td>Tramites SAR</td>
+              <td><span class="priority-badge normal">Normal</span></td>
+              <td><span class="status-badge open"><span class="status-dot"></span> Abierto</span></td>
+              <td style="font-family: var(--font-mono); font-size: var(--font-size-xs);">10 Mar 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticket-id">#TK-2026-0138</span></td>
+              <td>Consulta sobre factura electronica anulada</td>
+              <td>Facturacion</td>
+              <td><span class="priority-badge normal">Normal</span></td>
+              <td><span class="status-badge resolved"><span class="status-dot"></span> Resuelto</span></td>
+              <td style="font-family: var(--font-mono); font-size: var(--font-size-xs);">5 Mar 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticket-id">#TK-2026-0130</span></td>
+              <td>No puedo acceder al portal del cliente</td>
+              <td>Portal</td>
+              <td><span class="priority-badge urgente">Urgente</span></td>
+              <td><span class="status-badge resolved"><span class="status-dot"></span> Resuelto</span></td>
+              <td style="font-family: var(--font-mono); font-size: var(--font-size-xs);">28 Feb 2026</td>
+            </tr>
+            <tr>
+              <td><span class="ticket-id">#TK-2026-0125</span></td>
+              <td>Informacion para constituir S. de R.L.</td>
+              <td>Constitucion</td>
+              <td><span class="priority-badge normal">Normal</span></td>
+              <td><span class="status-badge closed"><span class="status-dot"></span> Cerrado</span></td>
+              <td style="font-family: var(--font-mono); font-size: var(--font-size-xs);">25 Feb 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== PREGUNTAS FRECUENTES ====== -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="ledger-line-center"></div>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Las preguntas mas consultadas por nuestros clientes.</p>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6 fade-in">
+          <a href="faq.html" class="faq-link-item">
+            <i class="bi bi-question-circle"></i>
+            <span>Cuales son los plazos para presentar declaraciones mensuales?</span>
+            <i class="bi bi-arrow-right arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-6 fade-in">
+          <a href="faq.html" class="faq-link-item">
+            <i class="bi bi-question-circle"></i>
+            <span>Como obtengo mi RTN por primera vez?</span>
+            <i class="bi bi-arrow-right arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-6 fade-in">
+          <a href="faq.html" class="faq-link-item">
+            <i class="bi bi-question-circle"></i>
+            <span>Que documentos necesito para constituir una empresa?</span>
+            <i class="bi bi-arrow-right arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-6 fade-in">
+          <a href="faq.html" class="faq-link-item">
+            <i class="bi bi-question-circle"></i>
+            <span>Puedo corregir una declaracion ya presentada al SAR?</span>
+            <i class="bi bi-arrow-right arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-6 fade-in">
+          <a href="faq.html" class="faq-link-item">
+            <i class="bi bi-question-circle"></i>
+            <span>Cuales son los metodos de pago aceptados?</span>
+            <i class="bi bi-arrow-right arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-6 fade-in">
+          <a href="faq.html" class="faq-link-item">
+            <i class="bi bi-question-circle"></i>
+            <span>Como accedo a mis reportes financieros en el portal?</span>
+            <i class="bi bi-arrow-right arrow"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="text-center mt-5 fade-in">
+        <a href="faq.html" class="btn btn-outline-custom">Ver todas las preguntas frecuentes <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== LLAMADO A ACCIÓN ====== -->
+  <section class="cta-section-wrap">
+    <div class="container">
+      <div class="cta-support fade-in">
+        <div class="ledger-line-center" style="margin-bottom: var(--space-6);"></div>
+        <h2>Necesita ayuda <em>inmediata?</em></h2>
+        <p>Nuestro equipo de expertos contables esta listo para asistirle. Llamenos directamente y resolveremos su consulta al instante.</p>
+        <a href="tel:+50499162219" class="cta-phone">
+          <i class="bi bi-telephone-fill"></i> +504 9916-2219
+        </a>
+        <div style="margin-top: var(--space-6); position: relative;">
+          <span style="color: rgba(250,247,242,0.45); font-size: var(--font-size-sm);">Disponible de lunes a viernes, 8:00 AM - 5:00 PM</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-icon">S</span>
+            <span class="brand-text">Solano & Asociados</span>
+          </div>
+          <p class="footer-desc mt-3">
+            Servicios profesionales de contaduria publica, finanzas y tributacion en Honduras.
+          </p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Navegacion</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="servicio.html">Declaraciones</a></li>
+            <li><a href="servicio.html">ISR Anual</a></li>
+            <li><a href="servicio.html">Constitucion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Boletin Informativo</h4>
+          <p class="footer-desc">Reciba actualizaciones fiscales y consejos directamente en su correo.</p>
+          <form class="footer-newsletter mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-custom" placeholder="Su correo electronico" required>
+              <button class="btn btn-accent-custom" type="submit">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copy">&copy; <span id="currentYear">2026</span> Solano Y Asociados. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-legal">
+              <a href="terminos.html">Terminos de Uso</a>
+              <a href="privacidad.html">Aviso de Privacidad</a>              <a href="devoluciones.html">Devoluciones</a>
+              <a href="cookies.html">Cookies</a>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+  (function(){
+    const input = document.querySelector('.support-search-box input');
+    const btn = document.querySelector('.support-search-box button');
+    const tags = document.querySelectorAll('.support-search-tags a');
+    const cards = document.querySelectorAll('.kb-card');
+
+    function filterKB() {
+      const q = input.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.closest('.col-md-6').style.display = !q || text.includes(q) ? '' : 'none';
+      });
+    }
+
+    if (input) {
+      input.addEventListener('input', filterKB);
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); filterKB(); } });
+    }
+    if (btn) btn.addEventListener('click', filterKB);
+
+    tags.forEach(tag => {
+      tag.addEventListener('click', e => {
+        e.preventDefault();
+        if (input) { input.value = tag.textContent; filterKB(); }
+      });
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout — Solano Y Asociados. Complete su pedido de servicios contables y financieros.">
+  <title>Checkout — Solano Y Asociados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/carrito.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;&#xFE0F;</text></svg>">
+</head>
+
+<body class="checkout-page">
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon"></div>
+    </div>
+  </div>
+
+  <!-- ====== NAVEGACIÓN ====== -->
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-transparent fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo de Solano Y Asociados" class="navbar-logo" style="width: 40px; height: 40px; object-fit: contain;">
+        <span class="brand-text">Solano <span class="brand-ampersand">&</span> Asociados</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="soporte.html">Soporte</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link nav-cart" href="carrito.html" aria-label="Carrito de servicios">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent-custom btn-sm" href="mi-cuenta.html">
+              <i class="bi bi-person-circle me-1"></i> Mi Cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== ENCABEZADO ====== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Finalizar <em>Pedido</em></h1>
+      <p>Complete sus datos para finalizar la contratacion de servicios.</p>
+      <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item"><a href="carrito.html">Carrito</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ====== PROCESO DE PAGO ====== -->
+  <section class="checkout-section">
+    <div class="container">
+
+      <div class="checkout-stepper" id="stepper">
+        <div class="stepper-step active" data-step="1">
+          <div class="stepper-circle">1</div>
+          <span class="stepper-label">Datos personales</span>
+        </div>
+        <div class="stepper-line" id="line-1-2"></div>
+        <div class="stepper-step" data-step="2">
+          <div class="stepper-circle">2</div>
+          <span class="stepper-label">Metodo de pago</span>
+        </div>
+        <div class="stepper-line" id="line-2-3"></div>
+        <div class="stepper-step" data-step="3">
+          <div class="stepper-circle">3</div>
+          <span class="stepper-label">Confirmacion</span>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+
+          <div class="step-panel active" id="step-1">
+            <div class="checkout-card">
+              <h5><i class="bi bi-person-vcard"></i> Datos personales</h5>
+              <form id="formStep1" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label form-label-custom" for="nombre">Nombre completo <span style="color: var(--color-secondary);">*</span></label>
+                    <input type="text" class="form-control form-control-custom" id="nombre" placeholder="Ej: Carlos Lopez" required>
+                    <div class="invalid-feedback">Ingrese su nombre completo.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label form-label-custom" for="email">Correo electronico <span style="color: var(--color-secondary);">*</span></label>
+                    <input type="email" class="form-control form-control-custom" id="email" placeholder="correo@ejemplo.com" required>
+                    <div class="invalid-feedback">Ingrese un correo electronico valido.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label form-label-custom" for="telefono">Telefono <span style="color: var(--color-secondary);">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text" style="background: var(--teal-50); border-color: var(--teal-200); font-size: 0.85rem; font-family: var(--font-mono);">+504</span>
+                      <input type="tel" class="form-control form-control-custom" id="telefono" placeholder="9999-0000" required>
+                    </div>
+                    <div class="invalid-feedback">Ingrese su numero de telefono.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label form-label-custom" for="rtn">RTN <span style="color: var(--color-secondary);">*</span></label>
+                    <input type="text" class="form-control form-control-custom" id="rtn" placeholder="0801-1990-00001" maxlength="16" required>
+                    <div class="invalid-feedback">Ingrese un RTN valido (formato: 0000-0000-000000).</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label form-label-custom" for="direccion">Direccion <span style="color: var(--color-secondary);">*</span></label>
+                    <textarea class="form-control form-control-custom" id="direccion" rows="2" placeholder="Calle, colonia, ciudad, departamento" required></textarea>
+                    <div class="invalid-feedback">Ingrese su direccion.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label form-label-custom" for="empresa">Empresa <small style="color: var(--teal-500);">(opcional)</small></label>
+                    <input type="text" class="form-control form-control-custom" id="empresa" placeholder="Nombre de su empresa">
+                  </div>
+                </div>
+              </form>
+
+              <div class="step-navigation">
+                <a href="carrito.html" class="btn btn-outline-custom">
+                  <i class="bi bi-arrow-left me-2"></i>Volver al carrito
+                </a>
+                <button class="btn btn-primary-custom" onclick="goToStep(2)">
+                  Siguiente <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-panel" id="step-2">
+            <div class="checkout-card">
+              <h5><i class="bi bi-credit-card"></i> Metodo de pago</h5>
+
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <div class="payment-method selected" data-method="tarjeta" onclick="selectPayment('tarjeta')">
+                    <div class="pm-icon" style="background: var(--teal-50); color: var(--color-primary);">
+                      <i class="bi bi-credit-card-2-front"></i>
+                    </div>
+                    <div class="pm-name">Tarjeta de credito</div>
+                    <div class="pm-desc">Visa, Mastercard</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="payment-method" data-method="transferencia" onclick="selectPayment('transferencia')">
+                    <div class="pm-icon" style="background: var(--teal-50); color: var(--teal-700);">
+                      <i class="bi bi-bank"></i>
+                    </div>
+                    <div class="pm-name">Transferencia bancaria</div>
+                    <div class="pm-desc">BAC, Ficohsa, Banpais</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="payment-method" data-method="banco" onclick="selectPayment('banco')">
+                    <div class="pm-icon" style="background: var(--brass-50); color: var(--color-accent);">
+                      <i class="bi bi-cash-stack"></i>
+                    </div>
+                    <div class="pm-name">Pago en banco</div>
+                    <div class="pm-desc">Deposito en ventanilla</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-fields visible" id="cardFields">
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label form-label-custom" for="cardNumber">Numero de tarjeta <span style="color: var(--color-secondary);">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text" style="background: var(--teal-50); border-color: var(--teal-200);"><i class="bi bi-credit-card"></i></span>
+                      <input type="text" class="form-control form-control-custom" id="cardNumber" placeholder="0000 0000 0000 0000" maxlength="19" style="font-family: var(--font-mono);" required>
+                    </div>
+                    <div class="invalid-feedback">Ingrese un numero de tarjeta valido.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label form-label-custom" for="cardExpiry">Fecha de vencimiento <span style="color: var(--color-secondary);">*</span></label>
+                    <input type="text" class="form-control form-control-custom" id="cardExpiry" placeholder="MM/AA" maxlength="5" style="font-family: var(--font-mono);" required>
+                    <div class="invalid-feedback">Ingrese la fecha de vencimiento.</div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label form-label-custom" for="cardCVV">CVV <span style="color: var(--color-secondary);">*</span></label>
+                    <input type="text" class="form-control form-control-custom" id="cardCVV" placeholder="000" maxlength="4" style="font-family: var(--font-mono);" required>
+                    <div class="invalid-feedback">Ingrese el codigo CVV.</div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label form-label-custom" for="cardName">Nombre en la tarjeta <span style="color: var(--color-secondary);">*</span></label>
+                    <input type="text" class="form-control form-control-custom" id="cardName" placeholder="Nombre como aparece en la tarjeta" required>
+                    <div class="invalid-feedback">Ingrese el nombre del titular.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-fields" id="transferFields">
+                <div class="alert-transfer">
+                  <h6><i class="bi bi-info-circle me-1"></i> Instrucciones de transferencia</h6>
+                  <p>Banco: <strong>BAC Honduras</strong></p>
+                  <p>Cuenta: <strong style="font-family: var(--font-mono);">001-002345-678</strong></p>
+                  <p>A nombre de: <strong>Solano Y Asociados S. de R.L.</strong></p>
+                  <p style="color: var(--teal-500); font-size: 0.8rem; margin-bottom: 0;">Envie el comprobante a info@solanoyasociados.com</p>
+                </div>
+              </div>
+
+              <div class="card-fields" id="bankFields">
+                <div class="alert-bank">
+                  <h6><i class="bi bi-info-circle me-1"></i> Instrucciones de deposito</h6>
+                  <p>Realice el deposito en cualquier agencia de <strong>BAC Honduras</strong> o <strong>Ficohsa</strong>.</p>
+                  <p>Cuenta BAC: <strong style="font-family: var(--font-mono);">001-002345-678</strong></p>
+                  <p>Cuenta Ficohsa: <strong style="font-family: var(--font-mono);">200-003456-789</strong></p>
+                  <p style="color: var(--teal-500); font-size: 0.8rem; margin-bottom: 0;">Presente el numero de pedido como referencia en el deposito.</p>
+                </div>
+              </div>
+
+              <div class="step-navigation">
+                <button class="btn btn-outline-custom" onclick="goToStep(1)">
+                  <i class="bi bi-arrow-left me-2"></i>Anterior
+                </button>
+                <button class="btn btn-primary-custom" onclick="goToStep(3)">
+                  Siguiente <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-panel" id="step-3">
+            <div class="checkout-card">
+              <h5><i class="bi bi-clipboard-check"></i> Confirmacion del pedido</h5>
+
+              <div class="confirm-card">
+                <h6><i class="bi bi-person"></i> Datos del cliente</h6>
+                <p id="confirmClientData">--</p>
+              </div>
+
+              <div class="confirm-card">
+                <h6><i class="bi bi-credit-card"></i> Metodo de pago</h6>
+                <p id="confirmPaymentData">--</p>
+              </div>
+
+              <div class="confirm-card">
+                <h6><i class="bi bi-bag-check"></i> Servicios contratados</h6>
+                <div id="confirmItemsList">--</div>
+              </div>
+
+              <div class="form-check mt-4">
+                <input class="form-check-input" type="checkbox" id="acceptTerms">
+                <label class="form-check-label" for="acceptTerms" style="font-size: 0.85rem; color: var(--ink);">
+                  Acepto los <a href="terminos.html" target="_blank" style="color: var(--color-primary);">terminos y condiciones</a> y el <a href="privacidad.html" target="_blank" style="color: var(--color-primary);">aviso de privacidad</a> de Solano Y Asociados.
+                </label>
+              </div>
+
+              <div class="step-navigation">
+                <button class="btn btn-outline-custom" onclick="goToStep(2)">
+                  <i class="bi bi-arrow-left me-2"></i>Anterior
+                </button>
+                <button class="btn btn-primary-custom px-4 py-2" id="btnConfirm" onclick="submitOrder()">
+                  <i class="bi bi-check-circle me-2"></i>Confirmar pedido
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-4">
+          <div class="checkout-summary">
+            <h4><i class="bi bi-receipt"></i> Resumen</h4>
+            <div id="checkoutItems"></div>
+            <div class="summary-divider"></div>
+            <div class="summary-total-row">
+              <span class="label">Subtotal</span>
+              <span class="value" id="ckSubtotal">L 0.00</span>
+            </div>
+            <div class="summary-total-row">
+              <span class="label">ISV (15%)</span>
+              <span class="value" id="ckTax">L 0.00</span>
+            </div>
+            <div class="summary-total-row grand-total">
+              <span class="label">Total</span>
+              <span class="value" id="ckTotal">L 0.00</span>
+            </div>
+            <div class="security-badge">
+              <i class="bi bi-shield-lock-fill"></i> Transaccion protegida con cifrado SSL
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CONFIRMACIÓN ====== -->
+  <div class="modal fade" id="successModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border: none; border-radius: 1rem; overflow: hidden;">
+        <div class="modal-body text-center p-5">
+          <div class="success-icon-wrapper">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          <h3 style="font-family: var(--font-serif); font-style: italic; margin-bottom: 0.5rem; color: var(--ink);">Pedido confirmado</h3>
+          <p style="color: var(--teal-600); margin-bottom: 0.25rem;">Su pedido ha sido registrado exitosamente.</p>
+          <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">
+            N. de pedido: <strong id="orderNumber" style="color: var(--color-primary); font-family: var(--font-mono);">--</strong>
+          </p>
+          <p style="color: var(--teal-600); font-size: 0.85rem; margin-bottom: 1.5rem;">
+            Recibira un correo electronico de confirmacion con los detalles de su pedido y las instrucciones siguientes.
+          </p>
+          <div class="d-flex gap-2 justify-content-center flex-wrap">
+            <a href="index.html" class="btn btn-primary-custom px-4">
+              <i class="bi bi-house me-1"></i> Ir al inicio
+            </a>
+            <a href="catalogo.html" class="btn btn-outline-custom px-4">
+              <i class="bi bi-grid me-1"></i> Ver mas servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-icon">S</span>
+            <span class="brand-text">Solano & Asociados</span>
+          </div>
+          <p class="footer-desc mt-3">
+            Servicios profesionales de contaduria publica, finanzas y tributacion en Honduras.
+          </p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Navegacion</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="servicio.html">Declaraciones</a></li>
+            <li><a href="servicio.html">ISR Anual</a></li>
+            <li><a href="servicio.html">Constitucion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Boletin Informativo</h4>
+          <p class="footer-desc">Reciba actualizaciones fiscales y consejos directamente en su correo.</p>
+          <form class="footer-newsletter mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-custom" placeholder="Su correo electronico" required>
+              <button class="btn btn-accent-custom" type="submit">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copy">&copy; <span id="currentYear">2026</span> Solano Y Asociados. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-legal">
+              <a href="terminos.html">Terminos de Uso</a>
+              <a href="privacidad.html">Aviso de Privacidad</a>              <a href="devoluciones.html">Devoluciones</a>
+              <a href="cookies.html">Cookies</a>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

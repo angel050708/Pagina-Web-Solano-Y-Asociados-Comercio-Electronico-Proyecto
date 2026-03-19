@@ -1,0 +1,454 @@
+/* === Estilos de páginas legales === */
+
+/* --- Encabezado de página --- */
+.legal-page .page-header {
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-page .page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(15, 118, 110, 0.15), transparent),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(180, 83, 9, 0.08), transparent);
+  pointer-events: none;
+}
+
+.legal-page .page-header h1 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  color: var(--parchment);
+  margin-bottom: 0.5rem;
+}
+
+.legal-page .page-header .page-header-sub {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 540px;
+}
+
+.legal-page .page-header .breadcrumb {
+  margin-bottom: 1rem;
+}
+
+.legal-page .page-header .breadcrumb a {
+  color: var(--teal-500);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.legal-page .page-header .breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.legal-page .page-header .breadcrumb-item.active {
+  color: var(--ink-muted);
+}
+
+.legal-page .page-header .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--ink-tertiary);
+}
+
+/* --- Diseño --- */
+.legal-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  padding: var(--space-3xl) 0 var(--space-4xl);
+  align-items: start;
+}
+
+/* --- Tabla de contenidos --- */
+.legal-toc {
+  position: sticky;
+  top: 100px;
+  background: var(--surface);
+  border: 1px solid var(--surface-inset);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-toc-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--surface-inset);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legal-toc-title i {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.legal-toc ol {
+  list-style: none;
+  counter-reset: toc;
+  padding: 0;
+  margin: 0;
+}
+
+.legal-toc ol li {
+  counter-increment: toc;
+}
+
+.legal-toc ol li a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  margin: 0 -0.6rem;
+  border-radius: var(--radius-md);
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.835rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: background 0.2s, color 0.2s;
+}
+
+.legal-toc ol li a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+  min-width: 1.4rem;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.legal-toc ol li a:hover,
+.legal-toc ol li a.active {
+  background: var(--teal-50);
+  color: var(--color-primary);
+}
+
+.legal-toc ol li a:hover::before,
+.legal-toc ol li a.active::before {
+  color: var(--color-primary);
+}
+
+/* --- Cuerpo principal --- */
+.legal-body {
+  max-width: 780px;
+  min-width: 0;
+}
+
+.legal-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--teal-50);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  border-radius: var(--radius-full);
+  margin-bottom: 2.5rem;
+}
+
+.legal-updated i {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+}
+
+.legal-updated span {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+/* --- Secciones --- */
+.legal-section {
+  scroll-margin-top: 100px;
+  margin-bottom: 0;
+  padding-bottom: 2.5rem;
+}
+
+.legal-section + .legal-section {
+  padding-top: 2.5rem;
+}
+
+.legal-section + .legal-section::before {
+  content: '';
+  display: block;
+  height: 0;
+  margin-bottom: 2.5rem;
+  border-top: 1px solid var(--surface-inset);
+  position: relative;
+}
+
+.legal-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.legal-section-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-primary);
+  color: var(--parchment);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.legal-section-heading h2 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.legal-section p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--ink-secondary);
+  margin-bottom: 1rem;
+}
+
+.legal-section p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-section strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.legal-section ul,
+.legal-section ol {
+  padding-left: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.legal-section li {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--ink-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.legal-section ul li::marker {
+  color: var(--color-primary);
+}
+
+.legal-section ol li::marker {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.legal-section a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.legal-section a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* --- Tarjeta de contacto --- */
+.legal-contact-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-inset);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 1.75rem;
+  margin-top: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-contact-card p {
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--ink-secondary);
+}
+
+.legal-contact-card strong {
+  color: var(--ink);
+}
+
+.legal-contact-card i {
+  color: var(--color-primary);
+  width: 1.2rem;
+  text-align: center;
+  margin-right: 0.4rem;
+}
+
+.legal-contact-card a {
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.legal-contact-card a:hover {
+  border-bottom-color: var(--color-primary);
+}
+
+/* --- Banner de cookies --- */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--ink);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.25rem 0;
+  box-shadow: 0 -4px 30px rgba(12, 18, 32, 0.35);
+  transform: translateY(0);
+  transition: transform 0.4s ease;
+}
+
+.cookie-banner.hidden {
+  transform: translateY(110%);
+}
+
+.cookie-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cookie-banner-text {
+  color: var(--ink-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  flex: 1;
+  min-width: 280px;
+}
+
+.cookie-banner-text i {
+  color: var(--teal-500);
+}
+
+.cookie-banner-text a {
+  color: var(--parchment);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+}
+
+.cookie-banner-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn-accept {
+  padding: 0.5rem 1.5rem;
+  background: var(--color-primary);
+  color: var(--parchment);
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.cookie-btn-accept:hover {
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+}
+
+.cookie-btn-decline {
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  color: var(--ink-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.cookie-btn-decline:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--parchment);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 991.98px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .legal-toc {
+    position: static;
+    margin-bottom: 2rem;
+  }
+
+  .legal-page .page-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .legal-layout {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+  }
+
+  .legal-section-heading h2 {
+    font-size: 1.15rem;
+  }
+
+  .legal-toc {
+    padding: 1.25rem;
+  }
+
+  .legal-contact-card {
+    padding: 1.25rem;
+  }
+
+  .cookie-banner-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

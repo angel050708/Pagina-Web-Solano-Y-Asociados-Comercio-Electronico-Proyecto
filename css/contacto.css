@@ -1,0 +1,497 @@
+/* === Estilos de contacto === */
+
+/* --- Encabezado de página --- */
+.contact-page-header {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-page-header::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-page-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(180, 83, 9, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-page-header .breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.contact-page-header .breadcrumb-item a {
+  color: var(--teal-300);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.contact-page-header .breadcrumb-item a:hover {
+  color: var(--teal-200);
+}
+
+.contact-page-header .breadcrumb-item.active {
+  color: rgba(250, 247, 242, 0.5);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.contact-page-header .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(250, 247, 242, 0.3);
+}
+
+.contact-page-header h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--parchment);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.contact-page-header p {
+  color: rgba(250, 247, 242, 0.6);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 300;
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+/* --- Sección de contacto --- */
+.contact-section {
+  padding: 5rem 0;
+  background: var(--parchment);
+}
+
+/* --- Formulario de contacto --- */
+.contact-form-card {
+  background: var(--surface);
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  border-radius: 16px;
+  padding: 2.75rem;
+  box-shadow: 0 1px 3px rgba(12, 18, 32, 0.04);
+}
+
+.contact-form-card .form-header-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-card .form-header-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(12, 18, 32, 0.55);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contact-form-card .form-label {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-card .form-label .required-mark {
+  color: var(--color-secondary);
+  margin-left: 2px;
+}
+
+.contact-form-card .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.contact-form-card .form-select.form-control-custom {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230c1220' d='M6 8.825L.35 3.175l.7-.7L6 7.425l4.95-4.95.7.7z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.contact-form-card .btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: var(--parchment);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form-card .btn-submit:hover {
+  background: var(--teal-800);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(15, 118, 110, 0.25);
+}
+
+.contact-form-card .btn-submit:active {
+  transform: translateY(0);
+}
+
+.contact-form-card .form-control-custom.is-invalid {
+  border-color: var(--color-secondary);
+}
+
+.contact-form-card .invalid-feedback {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--color-secondary);
+}
+
+/* --- Tarjetas de información --- */
+.contact-info-card {
+  background: var(--surface);
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.125rem;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(12, 18, 32, 0.06);
+  border-color: transparent;
+}
+
+.contact-info-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover .contact-info-icon {
+  transform: scale(1.08);
+}
+
+.contact-info-icon.icon-teal {
+  background: var(--teal-50);
+  color: var(--color-primary);
+}
+
+.contact-info-icon.icon-crimson {
+  background: var(--crimson-50);
+  color: var(--color-secondary);
+}
+
+.contact-info-icon.icon-brass {
+  background: var(--brass-50);
+  color: var(--color-accent);
+}
+
+.contact-info-icon.icon-ink {
+  background: rgba(12, 18, 32, 0.06);
+  color: var(--ink);
+}
+
+.contact-info-card .info-title {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.contact-info-card .info-text {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: rgba(12, 18, 32, 0.6);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-info-card .info-text a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-info-card .info-text a:hover {
+  color: var(--teal-800);
+}
+
+.contact-info-card .info-hint {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(12, 18, 32, 0.4);
+  margin: 0.25rem 0 0;
+}
+
+/* --- Tabla de horarios --- */
+.hours-table {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.hours-table td {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  padding: 0.2rem 0;
+  color: rgba(12, 18, 32, 0.6);
+}
+
+.hours-table td:first-child {
+  font-weight: 500;
+  color: var(--ink);
+  padding-right: 1.5rem;
+}
+
+.hours-table .hours-value {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+}
+
+/* --- Redes sociales --- */
+.social-heading {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(12, 18, 32, 0.45);
+  margin-bottom: 0.875rem;
+}
+
+.social-links-row {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+}
+
+.social-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(12, 18, 32, 0.08);
+  background: var(--surface);
+  color: rgba(12, 18, 32, 0.5);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-link-btn:hover {
+  transform: translateY(-2px);
+  color: var(--parchment);
+  border-color: transparent;
+}
+
+.social-link-btn.fb:hover { background: #1877f2; }
+.social-link-btn.ig:hover { background: #e4405f; }
+.social-link-btn.li:hover { background: #0a66c2; }
+.social-link-btn.wa:hover { background: #25d366; }
+
+/* --- Sección del mapa --- */
+.map-section {
+  padding: 0 0 5rem;
+  background: var(--parchment);
+}
+
+.map-section .section-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.map-section .section-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.75rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.map-section .section-desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: rgba(12, 18, 32, 0.55);
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(12, 18, 32, 0.06);
+  box-shadow: 0 1px 3px rgba(12, 18, 32, 0.04);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  display: block;
+}
+
+/* --- Sección CTA --- */
+.contact-cta {
+  background: var(--ink);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(159, 18, 57, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-cta .cta-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  color: var(--parchment);
+  margin-bottom: 1rem;
+}
+
+.contact-cta .cta-text {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: rgba(250, 247, 242, 0.55);
+  max-width: 520px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+
+/* --- Botón flotante de WhatsApp --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #25d366;
+  color: var(--surface);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1050;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.45);
+  color: var(--surface);
+}
+
+/* --- Responsivo --- */
+@media (max-width: 991.98px) {
+  .contact-form-card {
+    padding: 2rem;
+  }
+
+  .contact-page-header {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-section {
+    padding: 3.5rem 0;
+  }
+
+  .contact-form-card {
+    padding: 1.5rem;
+  }
+
+  .contact-form-card .form-header-title {
+    font-size: 1.5rem;
+  }
+
+  .map-container iframe {
+    height: 280px;
+  }
+
+  .map-section {
+    padding-bottom: 3.5rem;
+  }
+
+  .contact-cta {
+    padding: 3.5rem 0;
+  }
+}

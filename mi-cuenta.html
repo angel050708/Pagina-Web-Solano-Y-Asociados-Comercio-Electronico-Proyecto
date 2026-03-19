@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mi Cuenta — Portal de clientes de Solano Y Asociados. Acceda a su dashboard, documentos y servicios fiscales.">
+  <meta name="keywords" content="mi cuenta, portal clientes, dashboard fiscal, Solano Y Asociados, Honduras">
+  <meta name="author" content="Solano Y Asociados">
+  <meta name="theme-color" content="#faf7f2">
+
+  <title>Mi Cuenta — Solano Y Asociados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/cuenta.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%230f766e'/><text x='50' y='72' text-anchor='middle' font-size='60' font-weight='bold' fill='white'>S</text></svg>">
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- ====== NAVEGACIÓN ====== -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo de Solano Y Asociados" class="navbar-logo" style="width: 40px; height: 40px; object-fit: contain;">
+        <span class="brand-text">Solano <span class="brand-ampersand">&</span> Asociados</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="soporte.html">Soporte</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link nav-cart" href="carrito.html" aria-label="Carrito de servicios">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent-custom btn-sm" href="mi-cuenta.html">
+              <i class="bi bi-person-circle me-1"></i> Mi Cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ====== INICIO DE SESIÓN ====== -->
+  <section class="cuenta-section" id="authSection">
+    <div class="container">
+      <div class="auth-wrapper" data-animate="fade-up">
+        <div class="auth-card">
+
+          <!-- Panel de marca -->
+          <div class="auth-brand-panel">
+            <div class="auth-brand-content">
+              
+              
+              <h2>Solano <span>&amp;</span> Asociados</h2>
+              <p>Portal de servicios fiscales y contables para nuestros clientes</p>
+              <div class="auth-brand-ledger"></div>
+              <ul class="auth-brand-features">
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Documentos fiscales en línea</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Seguimiento de vencimientos</li>
+                <li><i class="bi bi-check2" aria-hidden="true"></i> Resumen financiero actualizado</li>
+              </ul>
+            </div>
+            <div class="auth-brand-footer">
+              <i class="bi bi-shield-check" aria-hidden="true"></i> Conexión segura y cifrada
+            </div>
+          </div>
+
+          <!-- Panel de formulario -->
+          <div class="auth-form-panel">
+            <div class="auth-tabs">
+              <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">
+                Iniciar sesión
+              </button>
+              <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')">
+                Crear cuenta
+              </button>
+            </div>
+
+            <!-- Formulario de login -->
+            <div class="auth-body" id="loginForm">
+              <form id="formLogin" onsubmit="handleLogin(event)">
+                <div class="auth-form">
+                  <div class="form-group">
+                    <label for="loginEmail">Correo electrónico</label>
+                    <input type="email" class="form-control form-control-custom" id="loginEmail" placeholder="correo@ejemplo.com…" autocomplete="email" spellcheck="false" required>
+                    <div class="invalid-feedback">Ingrese un correo electrónico válido</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" class="form-control form-control-custom" id="loginPassword" placeholder="Mínimo 8 caracteres…" autocomplete="current-password" required>
+                    <div class="invalid-feedback">La contraseña es obligatoria</div>
+                  </div>
+
+                  <div class="auth-extras">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="rememberMe">
+                      <label class="form-check-label" for="rememberMe">Recordarme</label>
+                    </div>
+                    <a href="#">¿Olvidó su contraseña?</a>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary-custom w-100">
+                    Iniciar sesión <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </form>
+
+              <div class="auth-divider">o</div>
+
+              <button class="btn-social" onclick="showToast('Inicio con Google próximamente disponible', 'info')">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Continuar con Google
+              </button>
+            </div>
+
+            <!-- Formulario de registro -->
+            <div class="auth-body" id="registerForm" style="display: none;">
+              <form id="formRegister" onsubmit="handleRegister(event)">
+                <div class="auth-form">
+                  <div class="form-group">
+                    <label for="regName">Nombre completo</label>
+                    <input type="text" class="form-control form-control-custom" id="regName" placeholder="Juan Pérez…" autocomplete="name" required>
+                    <div class="invalid-feedback">El nombre es obligatorio</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="regEmail">Correo electrónico</label>
+                    <input type="email" class="form-control form-control-custom" id="regEmail" placeholder="correo@ejemplo.com…" autocomplete="email" spellcheck="false" required>
+                    <div class="invalid-feedback">Ingrese un correo electrónico válido</div>
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="regPhone">Teléfono</label>
+                        <input type="tel" class="form-control form-control-custom" id="regPhone" placeholder="+504 9999-0000…" autocomplete="tel" required>
+                        <div class="invalid-feedback">El teléfono es obligatorio</div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label for="regRTN">RTN <span class="label-hint">(opcional)</span></label>
+                        <input type="text" class="form-control form-control-custom" id="regRTN" placeholder="0801-1990-00001" maxlength="16" autocomplete="off">
+                        <div class="invalid-feedback">RTN invalido (formato: 0000-0000-000000)</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="regPassword">Contraseña</label>
+                    <input type="password" class="form-control form-control-custom" id="regPassword" placeholder="Mínimo 8 caracteres…" autocomplete="new-password" required>
+                    <div class="invalid-feedback">La contraseña es obligatoria</div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="regPasswordConfirm">Confirmar contraseña</label>
+                    <input type="password" class="form-control form-control-custom" id="regPasswordConfirm" placeholder="Repita su contraseña…" autocomplete="new-password" required>
+                    <div class="invalid-feedback">Las contraseñas deben coincidir</div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+                      <label class="form-check-label terms-label" for="acceptTerms">
+                        Acepto los <a href="terminos.html">Términos de uso</a> y el <a href="privacidad.html">Aviso de privacidad</a>
+                      </label>
+                      <div class="invalid-feedback">Debe aceptar los términos para continuar</div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary-custom w-100">
+                    Crear cuenta <i class="bi bi-arrow-right ms-1"></i>
+                  </button>
+                </div>
+              </form>
+
+              <div class="auth-divider">o</div>
+
+              <button class="btn-social" onclick="showToast('Registro con Google próximamente disponible', 'info')">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                </svg>
+                Continuar con Google
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== PANEL DE CONTROL ====== -->
+  <section class="dashboard-section" id="dashboardSection" style="display: none;">
+    <div class="container">
+
+      <div class="dashboard-welcome" data-animate="fade-up">
+        <div>
+          <h1>Bienvenido, <span>Juan Perez</span></h1>
+          <p class="dashboard-meta">
+            <i class="bi bi-calendar3 me-1"></i> Ultima sesion: <span class="mono">10 Abr 2025, 14:30</span>
+          </p>
+        </div>
+        <div class="dashboard-welcome-actions">
+          <button class="btn-notification" title="Notificaciones">
+            <i class="bi bi-bell"></i>
+            <span class="notif-dot"></span>
+          </button>
+          <button class="btn-logout" onclick="showAuthSection()">
+            <i class="bi bi-box-arrow-left"></i> Cerrar sesion
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-3" data-animate="fade-right">
+          <div class="dashboard-sidebar">
+            <div class="sidebar-user">
+              <div class="sidebar-avatar">JP</div>
+              <div class="sidebar-user-info">
+                <strong>Juan Perez</strong>
+                <small>Cliente Premium</small>
+              </div>
+            </div>
+            <ul class="sidebar-nav">
+              <li><a href="#" class="active" onclick="switchDashTab('resumen'); return false;"><i class="bi bi-grid-1x2"></i> Resumen</a></li>
+              <li><a href="#" onclick="switchDashTab('servicios'); return false;"><i class="bi bi-briefcase"></i> Mis servicios</a></li>
+              <li><a href="#" onclick="switchDashTab('vencimientos'); return false;"><i class="bi bi-clock-history"></i> Vencimientos</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-9">
+
+          <div class="row g-3 mb-4" data-animate="fade-up">
+            <div class="col-6 col-md-3">
+              <div class="dash-stat-card">
+                <div class="dash-stat-icon success">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="dash-stat-label">Estado fiscal</div>
+                <div class="dash-stat-value" id="statEstado">
+                  Al dia <span class="badge-status al-dia"><i class="bi bi-check2"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="dash-stat-card">
+                <div class="dash-stat-icon brass">
+                  <i class="bi bi-calendar-event"></i>
+                </div>
+                <div class="dash-stat-label">Proximo vencimiento</div>
+                <div class="dash-stat-value" id="statVencimiento">
+                  <span class="mono">10 Abr</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="dash-stat-card">
+                <div class="dash-stat-icon teal">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+                <div class="dash-stat-label">Servicios activos</div>
+                <div class="dash-stat-value" id="statServicios">
+                  <span class="mono">0</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="dash-stat-card">
+                <div class="dash-stat-icon crimson">
+                  <i class="bi bi-wallet2"></i>
+                </div>
+                <div class="dash-stat-label">Balance pendiente</div>
+                <div class="dash-stat-value" id="statBalance">
+                  <span class="mono">L 0.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-tabs" data-animate="fade-up">
+            <button class="dash-tab active" onclick="switchDashTab('resumen')">
+              <i class="bi bi-bar-chart-line me-1"></i> Resumen fiscal
+            </button>
+            <button class="dash-tab" onclick="switchDashTab('servicios')">
+              <i class="bi bi-briefcase me-1"></i> Mis servicios
+            </button>
+            <button class="dash-tab" onclick="switchDashTab('vencimientos')">
+              <i class="bi bi-clock-history me-1"></i> Proximos vencimientos
+            </button>
+          </div>
+
+          <div class="dash-tab-panel active" id="panelResumen" data-animate="fade-up">
+            <div class="row g-4">
+              <div class="col-lg-7">
+                <div class="dash-content-card">
+                  <div class="card-header-custom">
+                    <h3><i class="bi bi-bar-chart-line me-2"></i>Resumen del periodo</h3>
+                    <a href="#" class="view-all">Ver detalle</a>
+                  </div>
+                  <div class="card-body-custom" id="resumenFiscalBody">
+                    <div class="fiscal-summary-row">
+                      <span class="label">Ingresos por servicios</span>
+                      <span class="value">L 0.00</span>
+                    </div>
+                    <div class="fiscal-summary-row">
+                      <span class="label">ISV pagado (15%)</span>
+                      <span class="value">L 0.00</span>
+                    </div>
+                    <div class="fiscal-summary-row">
+                      <span class="label">Retenciones ISR</span>
+                      <span class="value">L 0.00</span>
+                    </div>
+                    <div class="fiscal-summary-row">
+                      <span class="label">Aportaciones IHSS</span>
+                      <span class="value">L 0.00</span>
+                    </div>
+                    <div class="fiscal-summary-row">
+                      <span class="label">Contribuciones municipales</span>
+                      <span class="value">L 0.00</span>
+                    </div>
+                    <div class="cuenta-ledger mt-3"></div>
+                    <div class="fiscal-summary-row mt-2">
+                      <span class="label"><strong>Total obligaciones</strong></span>
+                      <span class="value"><strong>L 0.00</strong></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="dash-content-card">
+                  <div class="card-header-custom">
+                    <h3><i class="bi bi-lightning me-2"></i>Acciones rapidas</h3>
+                  </div>
+                  <div class="card-body-custom">
+                    <div class="d-grid gap-2">
+                      <a href="#" class="quick-action-btn" onclick="openTicketModal(); return false;">
+                        <i class="bi bi-chat-dots"></i>
+                        Nueva consulta
+                      </a>
+                      <a href="#" class="quick-action-btn" onclick="showToast('Descargando factura...', 'success'); return false;">
+                        <i class="bi bi-file-earmark-arrow-down"></i>
+                        Descargar factura
+                      </a>
+                      <a href="catalogo.html" class="quick-action-btn">
+                        <i class="bi bi-plus-circle"></i>
+                        Solicitar servicio
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-tab-panel" id="panelServicios">
+            <div class="dash-content-card">
+              <div class="card-header-custom">
+                <h3><i class="bi bi-briefcase me-2"></i>Mis servicios contratados</h3>
+                <a href="catalogo.html" class="view-all">Contratar mas</a>
+              </div>
+              <div class="card-body-custom" id="panelServiciosBody">
+                <div class="empty-state">
+                  <i class="bi bi-briefcase"></i>
+                  <h4>No tiene servicios contratados</h4>
+                  <p>Explore nuestro catalogo para contratar servicios profesionales</p>
+                  <a href="catalogo.html" class="btn btn-primary-custom">Ver catalogo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-tab-panel" id="panelVencimientos">
+            <div class="dash-content-card">
+              <div class="card-header-custom">
+                <h3><i class="bi bi-clock-history me-2"></i>Calendario de obligaciones</h3>
+              </div>
+              <div class="card-body-custom" id="panelVencimientosBody">
+                <div class="empty-state">
+                  <i class="bi bi-calendar-check"></i>
+                  <h4>Sin vencimientos pendientes</h4>
+                  <p>Al contratar servicios, sus vencimientos apareceran aqui</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-icon">S</span>
+            <span class="brand-text">Solano &amp; Asociados</span>
+          </div>
+          <p class="footer-desc mt-3">
+            Servicios profesionales de contaduria publica, finanzas y tributacion en Honduras.
+          </p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Navegacion</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="servicio.html">Declaraciones</a></li>
+            <li><a href="servicio.html">ISR Anual</a></li>
+            <li><a href="servicio.html">Constitucion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Boletin Informativo</h4>
+          <p class="footer-desc">Reciba actualizaciones fiscales y consejos directamente en su correo.</p>
+          <form class="footer-newsletter mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-custom" placeholder="Su correo electronico" required>
+              <button class="btn btn-accent-custom" type="submit">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copy">&copy; <span id="currentYear">2026</span> Solano Y Asociados. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-legal">
+              <a href="terminos.html">Terminos de Uso</a>
+              <a href="privacidad.html">Aviso de Privacidad</a>              <a href="devoluciones.html">Devoluciones</a>
+              <a href="cookies.html">Cookies</a>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <div class="modal fade" id="ticketModal" tabindex="-1" aria-labelledby="ticketModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="border: none; border-radius: var(--radius-2xl); overflow: hidden;">
+        <div class="modal-header" style="background: var(--ink); padding: 1.5rem 2rem; border: none;">
+          <h5 class="modal-title" id="ticketModalLabel" style="font-family: var(--font-heading); font-style: italic; color: var(--parchment); font-weight: 400; font-size: var(--font-size-xl);">
+            <i class="bi bi-chat-dots me-2" style="color: var(--teal-400);"></i>Nueva consulta
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" style="padding: 2rem;" id="ticketFormContainer">
+          <p style="font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--ink-secondary); margin-bottom: 1.5rem;">
+            Envie su consulta y nos pondremos en contacto con usted a la brevedad posible.
+          </p>
+          <form id="ticketForm">
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-family: var(--font-body); font-size: var(--font-size-xs); font-weight: 600; color: var(--ink-secondary); margin-bottom: 0.4rem; letter-spacing: 0.03em; text-transform: uppercase;">
+                Telefono de contacto <span style="color: var(--color-secondary);">*</span>
+              </label>
+              <div class="input-group">
+                <span class="input-group-text" style="background: var(--teal-50); border-color: var(--teal-200); font-size: 0.85rem; font-family: var(--font-mono);">+504</span>
+                <input type="tel" class="form-control form-control-custom" id="ticketTelefono" placeholder="9999-0000" required>
+              </div>
+              <div class="invalid-feedback">Ingrese su numero de telefono</div>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-family: var(--font-body); font-size: var(--font-size-xs); font-weight: 600; color: var(--ink-secondary); margin-bottom: 0.4rem; letter-spacing: 0.03em; text-transform: uppercase;">
+                Asunto <span style="color: var(--color-secondary);">*</span>
+              </label>
+              <select class="form-control form-control-custom" id="ticketAsunto" required style="cursor: pointer;">
+                <option value="">Seleccione un asunto</option>
+                <option value="consulta-fiscal">Consulta fiscal</option>
+                <option value="soporte-servicio">Soporte de servicio contratado</option>
+                <option value="nueva-cotizacion">Solicitar cotizacion</option>
+                <option value="problema-portal">Problema con el portal</option>
+                <option value="otro">Otro</option>
+              </select>
+              <div class="invalid-feedback">Seleccione un asunto</div>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label style="display: block; font-family: var(--font-body); font-size: var(--font-size-xs); font-weight: 600; color: var(--ink-secondary); margin-bottom: 0.4rem; letter-spacing: 0.03em; text-transform: uppercase;">
+                Descripcion <span style="color: var(--color-secondary);">*</span>
+              </label>
+              <textarea class="form-control form-control-custom" id="ticketDescripcion" rows="4" placeholder="Describa detalladamente lo que necesita..." required></textarea>
+              <div class="invalid-feedback">Describa su consulta</div>
+            </div>
+            <button type="submit" class="btn btn-primary-custom w-100" id="btnTicket">
+              <i class="bi bi-send me-2"></i>Enviar consulta
+            </button>
+          </form>
+        </div>
+        <div class="modal-body" style="padding: 2rem; display: none;" id="ticketSuccessContainer">
+          <div style="text-align: center; padding: 1.5rem 0;">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--success-bg); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+              <i class="bi bi-check-lg" style="font-size: 2rem; color: var(--success);"></i>
+            </div>
+            <h4 style="font-family: var(--font-heading); font-style: italic; font-size: var(--font-size-xl); color: var(--ink); margin-bottom: 0.5rem;">Consulta enviada</h4>
+            <p style="font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--ink-secondary); margin-bottom: 0.25rem;">
+              Su ticket ha sido registrado con el numero:
+            </p>
+            <p style="font-family: var(--font-mono); font-size: var(--font-size-lg); font-weight: 600; color: var(--color-primary); margin-bottom: 1rem;" id="ticketNumber"></p>
+            <p style="font-family: var(--font-body); font-size: var(--font-size-sm); color: var(--ink-tertiary); margin-bottom: 1.5rem;">
+              Nos comunicaremos con usted al numero proporcionado en las proximas 24 horas habiles.
+            </p>
+            <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/mi-cuenta.js"></script>
+</body>
+</html>

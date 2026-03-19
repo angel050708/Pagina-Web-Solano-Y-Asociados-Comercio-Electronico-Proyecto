@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog de Solano Y Asociados — Articulos sobre impuestos, finanzas, contabilidad, SAR y consejos para empresas en Honduras.">
+  <meta name="keywords" content="blog contabilidad, impuestos Honduras, SAR, finanzas, consejos fiscales, ISR">
+  <meta name="author" content="Solano Y Asociados">
+
+  <meta property="og:title" content="Blog — Solano Y Asociados">
+  <meta property="og:description" content="Articulos y recursos sobre contaduria, impuestos y finanzas para empresas y personas en Honduras.">
+  <meta property="og:type" content="website">
+
+  <title>Blog — Solano Y Asociados</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/blog.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x2696;&#xFE0F;</text></svg>">
+</head>
+<body>
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-icon"></div>
+    </div>
+  </div>
+
+  <!-- ====== NAVEGACIÓN ====== -->
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-transparent fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/logo.png" alt="Logo de Solano Y Asociados" class="navbar-logo" style="width: 40px; height: 40px; object-fit: contain;">
+        <span class="brand-text">Solano <span class="brand-ampersand">&</span> Asociados</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalogo.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="soporte.html">Soporte</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="nav-link nav-cart" href="carrito.html" aria-label="Carrito de servicios">
+              <i class="bi bi-bag"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-accent-custom btn-sm" href="mi-cuenta.html">
+              <i class="bi bi-person-circle me-1"></i> Mi Cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ====== ENCABEZADO ====== -->
+  <section class="blog-page-header">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        </ol>
+      </nav>
+      <h1>Nuestro Blog</h1>
+      <p style="color: var(--teal-100); max-width: 540px; margin-bottom: 0;">
+        Articulos, guias y analisis sobre contabilidad, impuestos, finanzas y obligaciones fiscales en Honduras.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-5" style="background: var(--parchment);">
+    <div class="container">
+      <div class="blog-featured">
+        <div class="row g-0">
+          <div class="col-lg-6">
+            <div class="blog-featured-img grad-ink h-100" style="min-height: 320px;">
+              <i class="bi bi-calendar2-check"></i>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="blog-featured-body d-flex flex-column justify-content-center h-100">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="blog-badge blog-badge-teal">Impuestos</span>
+                <span class="blog-badge blog-badge-crimson">SAR</span>
+              </div>
+              <h2><a href="blog-post.html">Calendario fiscal 2026: Fechas clave para no olvidar</a></h2>
+              <p>
+                Conozca todas las fechas importantes de obligaciones tributarias ante el SAR para el anio fiscal 2026. Declaraciones mensuales, pagos a cuenta, cierre fiscal y mas.
+              </p>
+              <div class="d-flex align-items-center gap-3">
+                <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>15 Ene 2026</span>
+                <span class="blog-date"><i class="bi bi-clock me-1"></i>8 min lectura</span>
+              </div>
+              <div class="mt-3">
+                <a href="blog-post.html" class="blog-read-more">
+                  Leer articulo <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ledger-line"></div>
+
+  <!-- ====== ARTÍCULOS ====== -->
+  <section class="py-5" style="background: var(--parchment);">
+    <div class="container">
+      <div class="row">
+
+        <!-- ====== CONTENIDO PRINCIPAL ====== -->
+        <div class="col-lg-8">
+          <div class="row g-4">
+
+            <div class="col-md-6">
+              <article class="blog-card">
+                <div class="blog-card-img grad-teal">
+                  <i class="bi bi-receipt-cutoff"></i>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-badge blog-badge-teal">Impuestos</span>
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>10 Ene 2026</span>
+                  </div>
+                  <h3><a href="blog-post.html">ISR en Honduras: Guia completa para personas naturales y juridicas</a></h3>
+                  <p>Todo lo que necesita saber sobre el Impuesto Sobre la Renta, tasas vigentes, deducciones permitidas y plazos de presentacion.</p>
+                  <a href="blog-post.html" class="blog-read-more">
+                    Leer mas <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6">
+              <article class="blog-card">
+                <div class="blog-card-img grad-crimson">
+                  <i class="bi bi-graph-up-arrow"></i>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-badge blog-badge-brass">Finanzas</span>
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>05 Ene 2026</span>
+                  </div>
+                  <h3><a href="blog-post.html">5 estrategias financieras para PYMES hondurenias en 2026</a></h3>
+                  <p>Optimice el flujo de caja, reduzca costos operativos y aproveche incentivos fiscales con estas estrategias probadas.</p>
+                  <a href="blog-post.html" class="blog-read-more">
+                    Leer mas <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6">
+              <article class="blog-card">
+                <div class="blog-card-img grad-brass">
+                  <i class="bi bi-building"></i>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-badge blog-badge-crimson">Empresas</span>
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>28 Dic 2025</span>
+                  </div>
+                  <h3><a href="blog-post.html">Constitucion de sociedad mercantil: Requisitos y costos actualizados</a></h3>
+                  <p>Paso a paso para constituir legalmente su empresa en Honduras. Documentos, tiempos y costos ante la Camara de Comercio.</p>
+                  <a href="blog-post.html" class="blog-read-more">
+                    Leer mas <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6">
+              <article class="blog-card">
+                <div class="blog-card-img grad-deep">
+                  <i class="bi bi-shield-check"></i>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-badge blog-badge-teal">SAR</span>
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>20 Dic 2025</span>
+                  </div>
+                  <h3><a href="blog-post.html">Facturacion electronica: Lo que el SAR exige a partir de 2026</a></h3>
+                  <p>La transicion a facturacion electronica es obligatoria. Conozca los nuevos requisitos, plazos y proveedores autorizados.</p>
+                  <a href="blog-post.html" class="blog-read-more">
+                    Leer mas <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6">
+              <article class="blog-card">
+                <div class="blog-card-img grad-warm">
+                  <i class="bi bi-cash-stack"></i>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-badge blog-badge-brass">Consejos</span>
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>15 Dic 2025</span>
+                  </div>
+                  <h3><a href="blog-post.html">Deducciones fiscales que la mayoria de contribuyentes desconoce</a></h3>
+                  <p>Aproveche al maximo las deducciones permitidas por ley. Gastos medicos, educativos y de vivienda que reducen su ISR.</p>
+                  <a href="blog-post.html" class="blog-read-more">
+                    Leer mas <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="col-md-6">
+              <article class="blog-card">
+                <div class="blog-card-img grad-teal">
+                  <i class="bi bi-journal-richtext"></i>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-badge blog-badge-crimson">Contabilidad</span>
+                    <span class="blog-date"><i class="bi bi-calendar3 me-1"></i>10 Dic 2025</span>
+                  </div>
+                  <h3><a href="blog-post.html">NIIF para PYMES: Adaptacion practica en la contabilidad hondurenia</a></h3>
+                  <p>Como implementar las Normas Internacionales de Informacion Financiera en su empresa sin complicaciones innecesarias.</p>
+                  <a href="blog-post.html" class="blog-read-more">
+                    Leer mas <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+          </div>
+
+          <nav class="mt-5" aria-label="Paginacion del blog">
+            <ul class="pagination justify-content-center blog-pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Anterior"><i class="bi bi-chevron-left"></i></a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Siguiente"><i class="bi bi-chevron-right"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-lg-4 blog-sidebar">
+
+          <div class="sidebar-widget">
+            <h4>Buscar</h4>
+            <div class="sidebar-search">
+              <i class="bi bi-search"></i>
+              <input type="text" placeholder="Buscar articulos...">
+            </div>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Categorias</h4>
+            <ul class="sidebar-categories">
+              <li><a href="#">Impuestos <span class="cat-count">12</span></a></li>
+              <li><a href="#">Finanzas <span class="cat-count">8</span></a></li>
+              <li><a href="#">Empresas <span class="cat-count">6</span></a></li>
+              <li><a href="#">SAR <span class="cat-count">9</span></a></li>
+              <li><a href="#">Contabilidad <span class="cat-count">7</span></a></li>
+              <li><a href="#">Consejos <span class="cat-count">5</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>Recientes</h4>
+            <ul class="sidebar-recent-list">
+              <li>
+                <a href="blog-post.html">
+                  <span class="recent-title">Calendario fiscal 2026: Fechas clave para no olvidar</span>
+                  <span class="recent-date"><i class="bi bi-calendar3"></i> 15 Ene 2026</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog-post.html">
+                  <span class="recent-title">ISR en Honduras: Guia completa para personas naturales y juridicas</span>
+                  <span class="recent-date"><i class="bi bi-calendar3"></i> 10 Ene 2026</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog-post.html">
+                  <span class="recent-title">5 estrategias financieras para PYMES hondurenias en 2026</span>
+                  <span class="recent-date"><i class="bi bi-calendar3"></i> 05 Ene 2026</span>
+                </a>
+              </li>
+              <li>
+                <a href="blog-post.html">
+                  <span class="recent-title">Facturacion electronica: Lo que el SAR exige a partir de 2026</span>
+                  <span class="recent-date"><i class="bi bi-calendar3"></i> 20 Dic 2025</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ledger-line"></div>
+
+  <!-- ====== BOLETÍN ====== -->
+  <section class="blog-newsletter text-center">
+    <div class="container position-relative">
+      <h2>Mantenga sus finanzas al dia</h2>
+      <p>Reciba alertas fiscales, guias practicas y novedades del SAR directamente en su correo.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Su correo electronico" required>
+        <button class="btn btn-accent-custom" type="submit">
+          <i class="bi bi-send me-1"></i> Suscribirse
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ====== PIE DE PÁGINA ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <span class="brand-icon">S</span>
+            <span class="brand-text">Solano & Asociados</span>
+          </div>
+          <p class="footer-desc mt-3">
+            Servicios profesionales de contaduria publica, finanzas y tributacion en Honduras.
+          </p>
+          <div class="footer-social mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Navegacion</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Servicios</h4>
+          <ul class="footer-links">
+            <li><a href="servicio.html">Declaraciones</a></li>
+            <li><a href="servicio.html">ISR Anual</a></li>
+            <li><a href="servicio.html">Constitucion</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="soporte.html">Soporte</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Boletin Informativo</h4>
+          <p class="footer-desc">Reciba actualizaciones fiscales y consejos directamente en su correo.</p>
+          <form class="footer-newsletter mt-3">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-custom" placeholder="Su correo electronico" required>
+              <button class="btn btn-accent-custom" type="submit">
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="footer-copy">&copy; <span id="currentYear">2026</span> Solano Y Asociados. Todos los derechos reservados.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-legal">
+              <a href="terminos.html">Terminos de Uso</a>
+              <a href="privacidad.html">Aviso de Privacidad</a>              <a href="devoluciones.html">Devoluciones</a>
+              <a href="cookies.html">Cookies</a>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/components.js"></script>
+</body>
+</html>
